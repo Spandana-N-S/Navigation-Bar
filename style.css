@@ -1,0 +1,744 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body{
+  background: #f0faff;
+}
+
+/* ========================================
+   SECTION LAYOUT
+   ======================================== */
+.nav-section {
+  position: relative;
+  min-height: 150px;
+  padding: 80px 20px 40px;
+  border-bottom: 2px dashed #ccc;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.section-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.section-content h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section-content p {
+  color: #666;
+}
+
+/* ========================================
+   1. HIDE NAVBAR ON SCROLL
+   ======================================== */
+.hide-on-scroll{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  z-index: 10;
+}
+.hide-on-scroll label{
+  font-size: 28px;
+  color: #0089f2;
+  font-weight: 600;
+}
+.hide-on-scroll ul{
+  list-style: none;
+  display: flex;
+}
+.hide-on-scroll ul li{
+  margin: 0 8px;
+}
+.hide-on-scroll ul li a{
+  color: #888;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.hide-on-scroll ul li.active a,
+.hide-on-scroll ul li a:hover{
+  color: #0089f2;
+  background: rgba(0,137,242,0.1);
+}
+
+/* ========================================
+   2. STICKY NAVIGATION BAR
+   ======================================== */
+.sticky-nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+.sticky-nav.sticky{
+  background: #4070f4;
+}
+.sticky-nav .logo a{
+  font-size: 28px;
+  font-weight: 600;
+  color: #4070f4;
+  text-decoration: none;
+}
+.sticky-nav.sticky .logo a{
+  color: #fff;
+}
+.sticky-nav .nav-links{
+  display: flex;
+  list-style: none;
+}
+.sticky-nav .nav-links li{
+  margin: 0 10px;
+}
+.sticky-nav .nav-links li a{
+  color: #333;
+  text-decoration: none;
+  padding: 8px 15px;
+  transition: all 0.3s;
+}
+.sticky-nav.sticky .nav-links li a{
+  color: #fff;
+}
+.sticky-nav .nav-links li a:hover{
+  color: #4070f4;
+}
+.sticky-nav.sticky .nav-links li a:hover{
+  color: #fff;
+}
+
+/* ========================================
+   3. NAVIGATION WITH SEARCH
+   ======================================== */
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #4a98f7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  z-index: 10;
+}
+.nav .logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+}
+.nav .nav-links{
+  display: flex;
+  list-style: none;
+  column-gap: 20px;
+}
+.nav .nav-links li a{
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+.nav .nav-links li a::after{
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: 0.3s;
+}
+.nav .nav-links li a:hover::after{
+  width: 100%;
+}
+.nav .search-icon {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.nav .search-box {
+  position: absolute;
+  right: 50px;
+  top: 70px;
+  height: 45px;
+  width: 300px;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.nav.openSearch .search-box {
+  opacity: 1;
+  visibility: visible;
+}
+.nav .search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+}
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+  display: none;
+}
+
+/* ========================================
+   4. DROPDOWN NAVIGATION
+   ======================================== */
+.dropdown-nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #3E8DA8;
+  z-index: 10;
+}
+.dropdown-nav .navbar{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+.dropdown-nav .navbar .logo a{
+  font-size: 28px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.dropdown-nav .navbar .links{
+  display: flex;
+  list-style: none;
+}
+.dropdown-nav .navbar .links li{
+  margin: 0 15px;
+  position: relative;
+}
+.dropdown-nav .navbar .links li a{
+  color: #fff;
+  text-decoration: none;
+  padding: 20px 10px;
+  display: block;
+}
+.dropdown-nav .navbar .links li .sub-menu{
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background: #3E8DA8;
+  list-style: none;
+  min-width: 150px;
+  display: none;
+}
+.dropdown-nav .navbar .links li:hover .sub-menu{
+  display: block;
+}
+.dropdown-nav .navbar .links li .sub-menu li{
+  margin: 0;
+  padding: 10px 15px;
+}
+.dropdown-nav .navbar .links li .sub-menu li a{
+  padding: 5px 10px;
+}
+.dropdown-nav .search-box{
+  position: relative;
+}
+.dropdown-nav .search-box i{
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ========================================
+   5. INDICATOR NAVIGATION
+   ======================================== */
+.indicator-nav{
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 10px 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+.indicator-nav .nav-content{
+  display: flex;
+  list-style: none;
+  position: relative;
+}
+.indicator-nav .link-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.indicator-nav .link-icon{
+  font-size: 28px;
+  color: #999;
+}
+.indicator-nav .link-item.active .link-icon,
+.indicator-nav .link-item:hover .link-icon{
+  color: #4070F4;
+}
+.indicator-nav .link-text{
+  font-size: 12px;
+  color: #4070F4;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s;
+}
+.indicator-nav .link-item.active .link-text{
+  opacity: 1;
+  transform: translateY(5px);
+}
+.indicator-nav .indicator{
+  position: absolute;
+  bottom: -5px;
+  left: 20px;
+  width: 60px;
+  height: 4px;
+  background: #4070F4;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ========================================
+   6. CSS TABS
+   ======================================== */
+.tabs-container{
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  z-index: 10;
+  overflow: hidden;
+}
+.tabs-container header{
+  padding: 15px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  background: #17a2b8;
+  color: #fff;
+}
+.tabs-container nav{
+  display: flex;
+  position: relative;
+  background: #f5f5f5;
+}
+.tabs-container nav label{
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  color: #17a2b8;
+  transition: 0.3s;
+  position: relative;
+  z-index: 1;
+}
+.tabs-container nav label:hover,
+.tabs-container nav label.checked{
+  background: rgba(23,162,184,0.2);
+}
+.tabs-container nav .slider{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  background: #17a2b8;
+  transition: 0.3s;
+}
+.tabs-container input[type="radio"]{
+  display: none;
+}
+#tab-blog:checked ~ nav .slider{ left: 20%; }
+#tab-code:checked ~ nav .slider{ left: 40%; }
+#tab-help:checked ~ nav .slider{ left: 60%; }
+#tab-about:checked ~ nav .slider{ left: 80%; }
+
+.tabs-container section .content{
+  display: none;
+  padding: 20px;
+}
+#tab-home:checked ~ section .content-1,
+#tab-blog:checked ~ section .content-2,
+#tab-code:checked ~ section .content-3,
+#tab-help:checked ~ section .content-4,
+#tab-about:checked ~ section .content-5{
+  display: block;
+}
+
+/* ========================================
+   7. FULLSCREEN OVERLAY
+   ======================================== */
+#overlay-active{
+  display: none;
+}
+.overlay-menu-btn{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 20;
+}
+.overlay-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  clip-path: circle(0 at calc(100% - 45px) 45px);
+  transition: 0.5s;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#overlay-active:checked ~ .overlay-wrapper{
+  clip-path: circle(150%);
+}
+.overlay-wrapper ul{
+  list-style: none;
+  text-align: center;
+}
+.overlay-wrapper ul li{
+  margin: 20px 0;
+}
+.overlay-wrapper ul li a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+  transition: 0.3s;
+}
+.overlay-wrapper ul li a:hover{
+  color: #4158d0;
+}
+
+/* ========================================
+   8. HAMBURGER MENU
+   ======================================== */
+.hamburger-menu{
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+.hamburger-menu .icon{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin: 0 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.hamburger-menu .icon.active{
+  background: #FF676D;
+  border-color: #FF676D;
+}
+.hamburger-menu .icon i{
+  font-size: 30px;
+  color: #333;
+  position: absolute;
+  transition: 0.3s;
+}
+.hamburger-menu .icon.active i{
+  color: #fff;
+}
+.hamburger-menu .icon i.close{
+  opacity: 0;
+  transform: rotate(180deg);
+}
+.hamburger-menu .icon.active i.close{
+  opacity: 1;
+  transform: rotate(0);
+}
+.hamburger-menu .icon.active i.open{
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+/* ========================================
+   9. HOVER POPUP LINKS
+   ======================================== */
+.hover-popup-container{
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+.hover-popup-container p a{
+  position: relative;
+  color: #6d50e2;
+  text-decoration: none;
+  font-weight: 500;
+}
+.hover-popup-container p a span{
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #6d50e2;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.hover-popup-container p a:hover span{
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+/* ========================================
+   10. DRAGGABLE CIRCULAR MENU
+   ======================================== */
+.draggable-nav {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  width: 60px;
+  height: 60px;
+  z-index: 10;
+}
+.draggable-nav .nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-45deg);
+}
+.draggable-nav .nav-content .toggle-btn,
+.draggable-nav .nav-content span a {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+.draggable-nav .nav-content .toggle-btn {
+  font-size: 28px;
+  color: #0e2431;
+  transform: rotate(-225deg);
+  transition: 0.6s;
+}
+.draggable-nav.open .toggle-btn {
+  transform: rotate(0deg);
+}
+.draggable-nav .nav-content span {
+  position: absolute;
+  opacity: 0;
+  transition: 0.6s;
+}
+.draggable-nav.open .nav-content span {
+  opacity: 1;
+}
+.draggable-nav.open .nav-content span:nth-child(2) { transform: rotate(calc(1 * 72deg)) translateY(80px); }
+.draggable-nav.open .nav-content span:nth-child(3) { transform: rotate(calc(2 * 72deg)) translateY(80px); }
+.draggable-nav.open .nav-content span:nth-child(4) { transform: rotate(calc(3 * 72deg)) translateY(80px); }
+.draggable-nav.open .nav-content span:nth-child(5) { transform: rotate(calc(4 * 72deg)) translateY(80px); }
+.draggable-nav.open .nav-content span:nth-child(6) { transform: rotate(calc(5 * 72deg)) translateY(80px); }
+.draggable-nav .nav-content span a {
+  transform: rotate(45deg);
+  text-decoration: none;
+}
+.draggable-nav .nav-content span a i {
+  font-size: 20px;
+  color: #0e2431;
+  transform: rotate(calc(-1 * 72deg));
+}
+
+/* ========================================
+   11. SECTION SCROLL NAV
+   ======================================== */
+.section-scroll-nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #2980b9;
+  z-index: 10;
+}
+.section-scroll-nav .navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 50px;
+}
+.section-scroll-nav .navbar .logo a{
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.section-scroll-nav .navbar .menu{
+  display: flex;
+  list-style: none;
+}
+.section-scroll-nav .navbar .menu li{
+  margin: 0 15px;
+}
+.section-scroll-nav .navbar .menu li a{
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.section-scroll-nav .navbar .menu li a:hover{
+  color: #ffd700;
+}
+.back-to-top{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+.back-to-top a{
+  display: block;
+  width: 45px;
+  height: 45px;
+  background: #2980b9;
+  color: #fff;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .hide-on-scroll{
+    padding: 0 20px;
+  }
+  .hide-on-scroll label{
+    font-size: 20px;
+  }
+  .hide-on-scroll ul{
+    display: none;
+  }
+  
+  .sticky-nav{
+    padding: 0 20px;
+  }
+  .sticky-nav .nav-links{
+    display: none;
+  }
+  
+  .nav{
+    padding: 0 20px;
+  }
+  .nav .nav-links{
+    display: none;
+  }
+  .nav .navOpenBtn{
+    display: block;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .dropdown-nav .navbar{
+    padding: 0 20px;
+  }
+  .dropdown-nav .navbar .links{
+    display: none;
+  }
+  
+  .indicator-nav{
+    width: 90%;
+  }
+  .indicator-nav .link-item{
+    padding: 10px 15px;
+  }
+  
+  .hamburger-menu{
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: center;
+  }
+  
+  .section-scroll-nav .navbar{
+    padding: 0 20px;
+  }
+  .section-scroll-nav .navbar .menu{
+    display: none;
+  }
+}

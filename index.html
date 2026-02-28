@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Combined Navigation Bar </title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Unicons CSS -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+
+  <!-- ========================================
+       SECTION 1: HIDE NAVBAR ON SCROLL
+       ======================================== -->
+  <section class="nav-section" id="section-1">
+    <nav class="hide-on-scroll">
+      <label>CodingNepal</label>
+      <ul>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Services</a></li>
+      </ul>
+    </nav>
+    <div class="section-content">
+      <h2>1. Hide Navbar on Scroll</h2>
+      <p>Navbar hides when scrolling down, shows when scrolling up</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 2: STICKY NAVIGATION BAR
+       ======================================== -->
+  <section class="nav-section" id="section-2">
+    <nav class="sticky-nav">
+      <div class="nav-content">
+        <div class="logo"><a href="#">CodingLab.</a></div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="section-content">
+      <h2>2. Sticky Navigation Bar</h2>
+      <p>Navbar becomes sticky when scrolling past 20px</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 3: MAIN NAVIGATION WITH SEARCH
+       ======================================== -->
+  <section class="nav-section" id="section-3">
+    <nav class="nav">
+      <i class="uil uil-bars navOpenBtn"></i>
+      <a href="#" class="logo">CodingLab</a>
+      <ul class="nav-links">
+        <i class="uil uil-times navCloseBtn"></i>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <i class="uil uil-search search-icon" id="searchIcon"></i>
+      <div class="search-box">
+        <i class="uil uil-search search-icon"></i>
+        <input type="text" placeholder="Search here..." />
+      </div>
+    </nav>
+    <div class="section-content">
+      <h2>3. Navigation with Search Box</h2>
+      <p>Click the search icon to toggle search box</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 4: RESPONSIVE DROP DOWN MENU
+       ======================================== -->
+  <section class="nav-section" id="section-4">
+    <nav class="dropdown-nav">
+      <div class="navbar">
+        <i class='bx bx-menu'></i>
+        <div class="logo"><a href="#">CodingLab</a></div>
+        <div class="nav-links">
+          <div class="sidebar-logo">
+            <span class="logo-name">CodingLab</span>
+            <i class='bx bx-x' ></i>
+          </div>
+          <ul class="links">
+            <li><a href="#">HOME</a></li>
+            <li>
+              <a href="#">HTML & CSS</a>
+              <i class='bx bxs-chevron-down htmlcss-arrow arrow'></i>
+              <ul class="htmlCss-sub-menu sub-menu">
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">Login Forms</a></li>
+                <li><a href="#">Card Design</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">JAVASCRIPT</a>
+              <i class='bx bxs-chevron-down js-arrow arrow'></i>
+              <ul class="js-sub-menu sub-menu">
+                <li><a href="#">Dynamic Clock</a></li>
+                <li><a href="#">Form Validation</a></li>
+                <li><a href="#">Card Slider</a></li>
+              </ul>
+            </li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">CONTACT US</a></li>
+          </ul>
+        </div>
+        <div class="search-box">
+          <i class='bx bx-search'></i>
+          <div class="input-box">
+            <input type="text" placeholder="Search...">
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="section-content">
+      <h2>4. Responsive Drop Down Menu</h2>
+      <p>Multi-level dropdown menu with search box</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 5: NAVIGATION WITH INDICATOR
+       ======================================== -->
+  <section class="nav-section" id="section-5">
+    <nav class="indicator-nav">
+      <ul class="nav-content">
+        <li class="nav-list">
+          <a href="#" class="link-item active">
+            <i class='bx bxs-home link-icon'></i>
+            <span class="link-text">Home</span>
+          </a>
+        </li>
+        <li class="nav-list">
+          <a href="#" class="link-item">
+            <i class='bx bxs-caret-right-square link-icon'></i>
+            <span class="link-text">Content</span>
+          </a>
+        </li>
+        <li class="nav-list">
+          <a href="#" class="link-item">
+            <i class='bx bxs-bar-chart-square link-icon'></i>
+            <span class="link-text">Analytics</span>
+          </a>
+        </li>
+        <li class="nav-list">
+          <a href="#" class="link-item">
+            <i class='bx bxs-message-rounded link-icon'></i>
+            <span class="link-text">Comments</span>
+          </a>
+        </li>
+        <li class="nav-list">
+          <a href="#" class="link-item">
+            <i class='bx bxs-user link-icon'></i>
+            <span class="link-text">Profile</span>
+          </a>
+        </li>
+        <span class="indicator"></span>
+      </ul>
+    </nav>
+    <div class="section-content">
+      <h2>5. Navigation with Indicator</h2>
+      <p>Click items to see sliding indicator animation</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 6: CSS TABS
+       ======================================== -->
+  <section class="nav-section" id="section-6">
+    <div class="tabs-container">
+      <header>Pure CSS Tabs</header>
+      <input type="radio" name="slider" checked id="tab-home">
+      <input type="radio" name="slider" id="tab-blog">
+      <input type="radio" name="slider" id="tab-code">
+      <input type="radio" name="slider" id="tab-help">
+      <input type="radio" name="slider" id="tab-about">
+      <nav>
+        <label for="tab-home" class="tab-home"><i class="fas fa-home"></i>Home</label>
+        <label for="tab-blog" class="tab-blog"><i class="fas fa-blog"></i>Blog</label>
+        <label for="tab-code" class="tab-code"><i class="fas fa-code"></i>Code</label>
+        <label for="tab-help" class="tab-help"><i class="far fa-envelope"></i>Help</label>
+        <label for="tab-about" class="tab-about"><i class="far fa-user"></i>About</label>
+        <div class="slider"></div>
+      </nav>
+      <section>
+        <div class="content content-1">
+          <div class="title">This is a Home content</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="content content-2">
+          <div class="title">This is a Blog content</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="content content-3">
+          <div class="title">This is a Code content</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="content content-4">
+          <div class="title">This is a Help content</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="content content-5">
+          <div class="title">This is a About content</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </section>
+    </div>
+    <div class="section-content">
+      <h2>6. CSS Tabs Navigation</h2>
+      <p>Pure CSS tabs with sliding indicator</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 7: FULLSCREEN OVERLAY
+       ======================================== -->
+  <section class="nav-section" id="section-7">
+    <input type="checkbox" id="overlay-active">
+    <label for="overlay-active" class="overlay-menu-btn"><i class="fas fa-bars"></i></label>
+    <div class="overlay-wrapper">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </div>
+    <div class="section-content">
+      <h2>7. Fullscreen Overlay Navigation</h2>
+      <p>Click the icon in top right to open fullscreen menu</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 8: HAMBURGER MENU TRANSFORMATIONS
+       ======================================== -->
+  <section class="nav-section" id="section-8">
+    <div class="hamburger-menu">
+      <div class="icon">
+        <i class='bx bx-menu open'></i>
+        <i class='bx bx-x close' ></i>
+      </div>
+      <div class="icon line">
+        <i class='bx bx-menu open'></i>
+        <i class='bx bx-list-ul close'></i>
+      </div>
+      <div class="icon">
+        <i class='bx bx-grid-alt open'></i>
+        <i class='bx bx-x close'></i>
+      </div>
+      <div class="icon line">
+        <i class='bx bx-menu open'></i>
+        <i class='bx bx-menu-alt-right close' ></i>
+      </div>
+      <div class="icon">
+        <i class='bx bx-menu open'></i>
+        <i class='bx bx-right-arrow-alt close' ></i>
+      </div>
+    </div>
+    <div class="section-content">
+      <h2>8. Hamburger Menu Transformations</h2>
+      <p>Click each icon to see different transformations</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 9: HOVER POPUP LINKS
+       ======================================== -->
+  <section class="nav-section" id="section-9">
+    <div class="hover-popup-container">
+      <p>Hover over links to see popup: 
+        <a href="#">CodingLab<span>Visit Website</span></a>
+      </p>
+    </div>
+    <div class="section-content">
+      <h2>9. Hover Popup Links</h2>
+      <p>Hover over the link to see popup animation</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 10: DRAGGABLE CIRCULAR MENU
+       ======================================== -->
+  <section class="nav-section" id="section-10">
+    <div class="draggable-nav">
+      <div class="nav-content">
+        <div class="toggle-btn">
+          <i class='bx bx-plus'></i>
+        </div>
+        <span style="--i:1;">
+          <a href="#"><i class='bx bxs-home'></i></a>
+        </span>
+        <span style="--i:2;">
+          <a href="#"><i class='bx bxs-camera'></i></a>
+        </span>
+        <span style="--i:3;">
+          <a href="#"><i class='bx bxs-alarm' ></i></a>
+        </span>
+        <span style="--i:4;">
+          <a href="#"><i class='bx bxs-map' ></i></a>
+        </span>
+        <span style="--i:5;">
+          <a href="#"><i class='bx bxs-cog' ></i></a>
+        </span>
+      </div>
+    </div>
+    <div class="section-content">
+      <h2>10. Draggable Circular Menu</h2>
+      <p>Click + to expand, drag to move</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 11: SECTION SCROLL WITH BACK TO TOP
+       ======================================== -->
+  <section class="nav-section" id="section-11">
+    <nav class="section-scroll-nav">
+      <div class="navbar">
+        <div class="logo"><a href="#">CodingLab</a></div>
+        <ul class="menu">
+          <li><a href="#section-1">Home</a></li>
+          <li><a href="#section-2">About</a></li>
+          <li><a href="#section-3">Category</a></li>
+          <li><a href="#section-4">Contact</a></li>
+          <li><a href="#section-5">Feedback</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="back-to-top">
+      <a href="#section-1"><i class="fas fa-arrow-up"></i></a>
+    </div>
+    <div class="section-content">
+      <h2>11. Section Scroll Navigation</h2>
+      <p>Navigation links to scroll to sections with back-to-top button</p>
+    </div>
+  </section>
+
+  <script src="script/script.js"></script>
+</body>
+</html>
